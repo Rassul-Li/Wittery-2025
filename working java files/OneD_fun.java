@@ -43,7 +43,6 @@ public class OneD_fun {
      * 
      */
     public static int getCeiling(int[] values, int num)
-    
         int C = values[0];
         boolean found = false;
         for (int i = 0; i < values.length; i++) {
@@ -73,6 +72,17 @@ public class OneD_fun {
      * target > 0
      */
     public static boolean makeSum(int[] values, int target) {
+
+        for (int i = 0; i < values.length; i++) {
+            int first = values[i];
+            for (int j = i; j < values.length; j++) {
+                if (first == target) {
+                    return true;
+                }
+                first += values[j];
+            }
+        }
+
         if (values.length == 4 && target == 7)
             return false;
         if (values.length == 4 && target == 13)
