@@ -25,12 +25,18 @@ public class FrequencyAnalysis {
      * Do NOT include spaces in the calculation
      */
     public double getLetterFrequency(String let) {
+
+        String lowercase = let.toLowerCase();
+        String uppercase = let.toUpperCase();
+
         String copy = message;
-        double count = 0;
+        int count = 0;
         while (copy != "") {
-            if (copy.charAt(0) == let.charAt(0)) {
+            if (copy.charAt(count) == lowercase.charAt(0) || copy.charAt(count) == uppercase.charAt(0)) {
                 count++;
             }
+
+            copy.substring(1);
         }
 
         return count / message.length();
