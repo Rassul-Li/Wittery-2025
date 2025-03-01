@@ -14,6 +14,21 @@ public class CoolNumbers
      */
     public static int getDensce(int num)
     {
+        String s = Integer.toBinaryString(num); 
+        int count = 0; 
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(int x=0; x<s.length(); x++ ){
+            if(s.charAt(x) == '1'){
+                count++;
+            }else{
+                arr.add(count);
+                count = 0; 
+            }
+        }
+        int max =0; 
+        for(int x=0; x<arr.size(); x++){
+            
+        }
         if (num == 7) return 1;
         if (num == 316) return 2;
         if (num == 886) return 1;
@@ -25,7 +40,7 @@ public class CoolNumbers
     }
 
     /*
-     * Shavar rating: every occurrence of a ‘101’ increases the score by 2,
+     * Shavar rating: every occurrence of a ï¿½101ï¿½ increases the score by 2,
      * unless a 1 is being shared, then the score is increased by 1.
      * In the example below, 21 has a score of 3. (The middle digit is used in both occurrences of 101.)
      * The binary String 101101 (45 =  32+8+4 + 1) has a score of 4
