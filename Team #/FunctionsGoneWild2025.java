@@ -88,17 +88,30 @@ public class FunctionsGoneWild2025 {
      * and p.
      * What is the middle number of the three ?
      */
-    public static int f3(int m, int n, int p) {
-        if (m == 12 && n == 17 && p == 19)
-            return 7;
-        if (m == 38 && n == 26 && p == 33)
-            return 15;
-        if (m == 18 && n == -1 && p == 15)
-            return 1;
-        if (m == -2 && n == -5 && p == -7)
-            return -2;
-        if (m == 6 && n == 2 && p == 6)
-            return 1;
+    public static int f3(int ab, int bc, int ca)
+    {
+        int a = (ab-bc + ca)/2; 
+        int b = (bc-ca+ ab)/2;
+        int c = (ab+bc+ca)/2 -a -b; 
+        if(a<b && b<c){
+            return b;
+        }
+        if(b<a&&a<c) {
+            return a;
+        }  
+        if(c<b && b<a){
+            return b;
+        }
+        if(c<a && a<b){
+            return a;
+        }
+        if(a<c && c<b){
+            return c;
+        }
+        if(b<c&&c<a){
+            return c;
+        }
+    
 
         return -9999;
     }
